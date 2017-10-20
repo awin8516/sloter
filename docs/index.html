@@ -1,0 +1,156 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>sloter</title>
+<script src="jquery.1.11.3.min.js"></script>
+<script src="../dist/sloter.min.js"></script>
+<style>
+html, body{ margin:0; padding:0;color:#fff; text-align:center;}
+img { max-width:100%;}
+ul,li { margin:0; padding:0; list-style:none;}
+
+.sloter-test1 {width:60%;height:100px;margin:auto;margin-top:180px; }
+.sloter-test2 {width:100px;height:200px; margin:auto;margin-top:20px;}
+</style>
+</head>
+<body>
+    <div id="sloter1" class="sloter sloter-test1">
+        <div class="sloter-group">
+            <ul class="sloter-wrapper">
+                <li class="sloter-slide"><img src="image/1.png"></li>
+                <li class="sloter-slide"><img src="image/2.png"></li>
+                <li class="sloter-slide"><img src="image/3.png"></li>
+                <li class="sloter-slide"><img src="image/4.png"></li>
+                <li class="sloter-slide"><img src="image/5.png"></li>
+                <li class="sloter-slide"><img src="image/6.png"></li>
+                <li class="sloter-slide"><img src="image/7.png"></li>
+                <li class="sloter-slide"><img src="image/8.png"></li>
+            </ul>
+        </div>
+        <div class="sloter-group">
+            <ul class="sloter-wrapper">
+                <li class="sloter-slide"><img src="image/1.png"></li>
+                <li class="sloter-slide"><img src="image/2.png"></li>
+                <li class="sloter-slide"><img src="image/3.png"></li>
+                <li class="sloter-slide"><img src="image/4.png"></li>
+                <li class="sloter-slide"><img src="image/5.png"></li>
+                <li class="sloter-slide"><img src="image/6.png"></li>
+                <li class="sloter-slide"><img src="image/7.png"></li>
+                <li class="sloter-slide"><img src="image/8.png"></li>
+            </ul>
+        </div>
+        <div class="sloter-group">
+            <ul class="sloter-wrapper">
+                <li class="sloter-slide"><img src="image/1.png"></li>
+                <li class="sloter-slide"><img src="image/2.png"></li>
+                <li class="sloter-slide"><img src="image/3.png"></li>
+                <li class="sloter-slide"><img src="image/4.png"></li>
+                <li class="sloter-slide"><img src="image/5.png"></li>
+                <li class="sloter-slide"><img src="image/6.png"></li>
+                <li class="sloter-slide"><img src="image/7.png"></li>
+                <li class="sloter-slide"><img src="image/8.png"></li>
+            </ul>
+        </div>
+    </div>
+    <div id="sloter2" class="sloter sloter-test2">
+        <div class="sloter-group">
+            <ul class="sloter-wrapper">
+                <li class="sloter-slide"><img src="image/1.png"></li>
+                <li class="sloter-slide"><img src="image/2.png"></li>
+                <li class="sloter-slide"><img src="image/3.png"></li>
+                <li class="sloter-slide"><img src="image/4.png"></li>
+                <li class="sloter-slide"><img src="image/5.png"></li>
+                <li class="sloter-slide"><img src="image/6.png"></li>
+                <li class="sloter-slide"><img src="image/7.png"></li>
+                <li class="sloter-slide"><img src="image/8.png"></li>
+            </ul>
+        </div>
+        <div class="sloter-group">
+            <ul class="sloter-wrapper">
+                <li class="sloter-slide"><img src="image/1.png"></li>
+                <li class="sloter-slide"><img src="image/2.png"></li>
+                <li class="sloter-slide"><img src="image/3.png"></li>
+                <li class="sloter-slide"><img src="image/4.png"></li>
+                <li class="sloter-slide"><img src="image/5.png"></li>
+                <li class="sloter-slide"><img src="image/6.png"></li>
+                <li class="sloter-slide"><img src="image/7.png"></li>
+                <li class="sloter-slide"><img src="image/8.png"></li>
+            </ul>
+        </div>
+        <div class="sloter-group">
+            <ul class="sloter-wrapper">
+                <li class="sloter-slide"><img src="image/1.png"></li>
+                <li class="sloter-slide"><img src="image/2.png"></li>
+                <li class="sloter-slide"><img src="image/3.png"></li>
+                <li class="sloter-slide"><img src="image/4.png"></li>
+                <li class="sloter-slide"><img src="image/5.png"></li>
+                <li class="sloter-slide"><img src="image/6.png"></li>
+                <li class="sloter-slide"><img src="image/7.png"></li>
+                <li class="sloter-slide"><img src="image/8.png"></li>
+            </ul>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <button id="stop">stop</button>
+    <button id="goto">goto</button>
+    
+    
+<script type="text/javascript">
+	jQuery(window).ready(function(e) {
+		/**/
+		var mysloter1 = new sloter( '#sloter1', {
+			effect   : 'up',//up | down | left | right | turn
+			speed    : 8,//速度 值越大越快
+			duration : 5000,//持续时间
+			counts   : 8,// 转轮边数
+			init     : function(sloter){
+				console.log('init');
+				//console.log(sloter);
+			},
+			scroll : function(sloter){
+				console.log('scroll');
+				//console.log(sloter);
+			},
+			completed: function(sloter){
+				console.log('completed');
+				//console.log(sloter);
+			}
+		});
+		mysloter1.goto(0);// 0 1 2 3 分别为不中奖，1，2，3等奖
+		
+		/**/
+		var mysloter2 = new sloter( '#sloter2', {
+			effect   : 'right',//up | down | left | right | turn
+			speed    : 6,//速度 值越大越快
+			duration : 4000,//持续时间
+			counts   : 12,// 转轮边数
+			init     : function(sloter){
+				console.log('init');
+				//console.log(sloter);
+			},
+			scroll : function(sloter){
+				console.log('scroll');
+				//console.log(sloter);
+			},
+			completed: function(sloter){
+				console.log('completed');
+				//console.log(sloter);
+			}
+		});
+		//mysloter2.goto(3);
+		
+		/**/
+		$('#stop').on('click', function(){
+			mysloter2.stop();
+			//mysloter2.goto(4);
+		});
+		$('#goto').on('click', function(){
+			mysloter2.goto(5);
+		});
+	});
+</script>
+</body>
+</html>

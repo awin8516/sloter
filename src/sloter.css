@@ -1,0 +1,28 @@
+.sloter { white-space:nowrap;font-size:0;perspective:800px;-webkit-perspective:800px;transform-style: preserve-3d;-webkit-transform-style: preserve-3d;}
+.sloter img{ max-width:100%; max-height:100%;}
+.sloter-group { position:relative;background:#000;border:3px #f30 solid;overflow:hidden;}
+.sloter-group:nth-child(1) .sloter-wrapper{ transition-delay:0ms;}
+.sloter-group:nth-child(2) .sloter-wrapper{ transition-delay:300ms;}
+.sloter-group:nth-child(3) .sloter-wrapper{ transition-delay:600ms;}
+.sloter-group:nth-child(4) .sloter-wrapper{ transition-delay:900ms;}
+.sloter-group:nth-child(5) .sloter-wrapper{ transition-delay:1200ms;}
+.sloter-group:nth-child(6) .sloter-wrapper{ transition-delay:1500ms;}
+.sloter-group:before { content:"";display:inline-block; width:0; height:100%; vertical-align:middle;}
+.sloter-group:after  { content:"";display:inline-block;position:absolute;box-shadow:0 0 20px rgba(0,0,0,.8) inset;}
+.sloter .sloter-wrapper-ios { position:relative;display:inline-block;vertical-align:middle;-webkit-transform-style: preserve-3d;transform-style: preserve-3d;}
+.sloter .sloter-wrapper { position:relative;display:inline-block;vertical-align:middle;-webkit-transform-style: preserve-3d;transform-style: preserve-3d;transition-property:transform;-webkit-transition-property:transform;}
+.sloter .sloter-slide { position:absolute;left:0;top:0;-webkit-transform-style: preserve-3d;transform-style: preserve-3d;background:#DDDDDD;transform-origin:inherit}
+.sloter .sloter-slide:first-child {position:relative;}
+
+.sloter-vertical   .sloter-group:after{width:110%; height:100%;left:-5%;top:0;}
+.sloter-vertical   .sloter-group      {display:inline-block;width:33.333333333%;height:100%;}
+.sloter-vertical   .sloter-wrapper    {width:100%;}
+.sloter-vertical   .sloter-slide      {display:block;box-shadow:0 1px 0 0 #fff inset;}
+.sloter-horizontal .sloter-group:after{width:100%; height:110%;left:0;top:-5%;}
+.sloter-horizontal .sloter-group      {display:block;width:100%;height:33.333333333%;}
+.sloter-horizontal .sloter-wrapper    {height:100%;}
+.sloter-horizontal .sloter-slide      {display:inline-block;box-shadow:1px 0 0 #fff inset; height:100%;}
+
+/*
+半径 = (li.height*0.5)/tan(45/2)
+*/
