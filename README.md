@@ -68,6 +68,6 @@ var mysloter = new sloter( '#sloter1', {
 ```javascript
 mysloter.goto(0);// 0 1 2 3 分别为 不中奖，1，2，3等奖
 
-``
+```
 ## Example
 1. [Demo](https://awin8516.github.io/sloter/docs/)  
