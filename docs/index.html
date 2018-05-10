@@ -119,7 +119,7 @@ ul,li { margin:0; padding:0; list-style:none;}
 				//console.log(sloter);
 			}
 		});
-		mysloter1.goto(0);// 0 1 2 3 分别为不中奖，1，2，3等奖
+		mysloter1.goto([1,2,3]);// 分别对应系列里的图片，可自定义奖项；不传则随机
 		
 		/**/
 		var mysloter2 = new sloter( '#sloter2', {
@@ -148,7 +148,7 @@ ul,li { margin:0; padding:0; list-style:none;}
 			//mysloter2.goto(4);
 		});
 		$('#goto').on('click', function(){
-			mysloter2.goto(5);
+			mysloter2.goto();
 		});
 	});
 </script>

@@ -1,10 +1,10 @@
 {
   "name": "sloter",
   "version": "1.0.1",
-  "description": "",
+  "description": "sloter  老虎机\r ============",
   "repository": {
     "type": "git",
-    "url": "https://github.com/awin8516/sloter.git"
+    "url": "git+https://github.com/awin8516/sloter.git"
   },
   "main": "src/sloter.js",
   "dependencies": {
@@ -21,7 +21,12 @@
   },
   "author": "evan.fu",
   "license": "MIT",
-  "devDependencies": {
-    
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/awin8516/sloter/issues"
+  },
+  "homepage": "https://github.com/awin8516/sloter#readme",
+  "directories": {
+    "doc": "docs"
   }
 }

@@ -1,6 +1,6 @@
-.sloter { white-space:nowrap;font-size:0;perspective:800px;-webkit-perspective:800px;transform-style: preserve-3d;-webkit-transform-style: preserve-3d;}
+.sloter { white-space:nowrap;font-size:0;}
 .sloter img{ max-width:100%; max-height:100%;}
-.sloter-group { position:relative;background:#000;border:3px #f30 solid;overflow:hidden;}
+.sloter-group { position:relative;background:#000;border:3px #f30 solid;overflow:hidden;/*perspective:800px;-webkit-perspective:800px;transform-style: preserve-3d;-webkit-transform-style: preserve-3d;*/}
 .sloter-group:nth-child(1) .sloter-wrapper{ transition-delay:0ms;}
 .sloter-group:nth-child(2) .sloter-wrapper{ transition-delay:300ms;}
 .sloter-group:nth-child(3) .sloter-wrapper{ transition-delay:600ms;}

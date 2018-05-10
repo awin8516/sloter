@@ -81,23 +81,27 @@ window.sloter = function (selector, params) {
 			document.body.removeChild(p);
 			return res;
 		},
-		getRand : function(Min,Max){//随机数   
+		getRand : function(Min,Max,ignore){//随机数   
 			var Range = Max - Min;   
-			var Rand = Math.random();   
-			return(Min + Math.round(Rand * Range));   
+			var res = Min + Math.round(Math.random() * Range);
+			if(ignore != undefined){
+				for(i=0; i<1000; i++){
+					var res = Min + Math.round(Math.random() * Range);
+					if(typeof ignore != 'object'){
+						if(res != ignore) break;
+					}else{
+						if(ignore.indexOf(res) == -1 ) break;
+					}
+				}
+			}			
+			return res;   
 		},
 		getRandArray : function(Min, Max, Len){//随机数组
 			var arr = [];
-			for(var i=0;i<100;i++){
+			Len = Len > (Max - Min + 1) ? Max - Min + 1 : Len;
+			for(var i=0;i<1000;i++){
 				var _rand = this.getRand(Min,Max);
-				var repeat = false;
-				for(var k=0; k<arr.length; k++){
-					if(arr[k] == _rand){
-						repeat = true;
-						break;
-					};
-				};
-				if(!repeat){
+				if(arr.indexOf(_rand) == -1){
 					arr.push(_rand);
 					if(arr.length==Len) break;
 				};
@@ -180,11 +184,10 @@ window.sloter = function (selector, params) {
 		if(_this.scrolling) return;
 		_this.scrolling = true;
 		_this.hasEndEvent = true;
-		var endArr = _this.fn.getRandArray(1,_this.group.count, _this.group.length);
+		var _end = end ? end : _this.fn.getRandArray(1,_this.group.count, _this.group.length);
 		setTimeout(function(){
 			_this.group.ul.each(function(index, element){
-				var _end = !end || end==0 ? endArr[index] : end;
-				var angle = (_this.option.speed * 360 + parseInt(360/_this.option.counts)*(_end-1)) * _this.direction;
+				var angle = (_this.option.speed * 360 + parseInt(360/_this.option.counts)*(_end[index]-1)) * _this.direction;
 				$(this).data('angle', angle).css(jQuery.extend(_this.fn.doRotate(_this.rotate.x, _this.rotate.y, 0, angle),  _this.fn.doDuration(_this.option.duration)));
 			});
 			_this.option.scroll && _this.option.scroll(_this);
