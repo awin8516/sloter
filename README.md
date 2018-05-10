@@ -66,7 +66,7 @@ var mysloter = new sloter( '#sloter1', {
 `stop`
 
 ```javascript
-mysloter.goto([1,2,3]);// 分别对应系列里的图片索引，以此可自定义奖项；不传则随机
+mysloter.goto([1,2,3]);// 分别对应系列里的图片索引，以此可自定义奖项；不传则随机未中奖
 
 ```
 ## Example
